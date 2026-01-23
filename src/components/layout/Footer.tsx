@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail as MailIcon, Phone as PhoneIcon } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -26,23 +26,23 @@ export function Footer() {
             </p>
             <div className="space-y-3">
               <a
-                href="mailto:info@grandhomeconstruction.co.uk"
+                href="mailto:grandhomeconstructionltd@gmail.com"
                 className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
               >
-                <Mail className="w-4 h-4 text-accent" />
-                info@grandhomeconstruction.co.uk
+                <MailIcon className="w-4 h-4 text-accent flex-shrink-0" />
+                grandhomeconstructionltd@gmail.com
               </a>
               <a
                 href="tel:+441onal"
                 className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
               >
-                <Phone className="w-4 h-4 text-accent" />
+                <PhoneIcon className="w-4 h-4 text-accent flex-shrink-0" />
                 Contact Us Today
               </a>
-              <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
+              {/* <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
                 <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                 <span>21 Upper Rainham Road, Hornchurch, England, RM12 4BE</span>
-              </div>
+              </div> */}
             </div>
           </div>
 

@@ -83,78 +83,45 @@ export default function Contact() {
       </section>
 
       {/* Contact Section */}
-      <section className="section-padding bg-background">
+      <section className="py-20 bg-background">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-3 gap-12">
+          <div className="grid lg:grid-cols-3 gap-16">
             {/* Contact Info */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 flex flex-col items-center text-center">
               <h2 className="text-2xl font-display font-bold text-foreground mb-8">
                 Contact Information
               </h2>
 
-              <div className="space-y-6">
-                <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Office Address</h3>
-                    <p className="text-muted-foreground text-sm">
-                      21 Upper Rainham Road<br />
-                      Hornchurch, England<br />
-                      RM12 4BE
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+              <div className="space-y-6 w-full max-w-xs">
+                <div className="flex flex-col items-center p-6 bg-secondary rounded-xl">
+                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-4">
                     <Mail className="w-6 h-6 text-accent" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a
-                      href="mailto:info@grandhomeconstruction.co.uk"
-                      className="text-muted-foreground text-sm hover:text-accent transition-colors"
-                    >
-                      info@grandhomeconstruction.co.uk
-                    </a>
-                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Email</h3>
+                  <a
+                    href="mailto:grandhomeconstructionltd@gmail.com"
+                    className="text-muted-foreground text-sm hover:text-accent transition-colors"
+                  >
+                    grandhomeconstructionltd@gmail.com
+                  </a>
                 </div>
 
-                <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-accent" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <a
-                      href="tel:+441234567890"
-                      className="text-muted-foreground text-sm hover:text-accent transition-colors"
-                    >
-                      Contact Us
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4 p-4 bg-secondary rounded-xl">
-                  <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="flex flex-col items-center p-6 bg-secondary rounded-xl">
+                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-4">
                     <Clock className="w-6 h-6 text-accent" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Working Hours</h3>
-                    <p className="text-muted-foreground text-sm">
-                      Mon - Fri: 8:00 AM - 6:00 PM<br />
-                      Sat: 9:00 AM - 2:00 PM
-                    </p>
-                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Working Hours</h3>
+                  <p className="text-muted-foreground text-sm">
+                    Mon - Fri: 8:00 AM - 6:00 PM<br />
+                    Sat: 9:00 AM - 2:00 PM
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <div className="bg-card rounded-2xl p-8 shadow-card">
+              <div className="bg-card rounded-2xl p-10 shadow-card">
                 <h2 className="text-2xl font-display font-bold text-foreground mb-2">
                   Request a Free Quote
                 </h2>

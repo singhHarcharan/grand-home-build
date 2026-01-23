@@ -107,7 +107,7 @@ export default function About() {
                   <Shield className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                   <div>
                     <p className="text-sm text-muted-foreground">Registered Address</p>
-                    <p className="font-medium text-foreground">21 Upper Rainham Road, Hornchurch, England, RM12 4BE</p>
+                    <p className="font-medium text-foreground">2a Highfield Avenue, London, England, NW11 9ET</p>
                   </div>
                 </div>
               </div>
