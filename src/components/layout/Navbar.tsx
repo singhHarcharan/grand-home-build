@@ -76,13 +76,6 @@ export function Navbar() {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href="tel:+441onal"
-              className="flex items-center gap-2 text-primary-foreground hover:text-accent transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">Call Us</span>
-            </a>
             <Link to="/contact">
               <Button variant="accent" size="lg">
                 Get a Free Quote

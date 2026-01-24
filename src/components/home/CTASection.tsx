@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Phone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export function CTASection() {
   return (
@@ -32,16 +32,6 @@ export function CTASection() {
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
-            <a href="tel:+441oval">
-              <Button
-                size="xl"
-                variant="outline"
-                className="border-2 border-accent-foreground/30 bg-transparent text-accent-foreground hover:bg-accent-foreground/10 font-semibold"
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Call Us Now
-              </Button>
-            </a>
           </div>
         </div>
       </div>

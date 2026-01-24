@@ -103,13 +103,6 @@ export default function About() {
                     <p className="font-medium text-foreground">Construction of domestic buildings (SIC 41202)</p>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Shield className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Registered Address</p>
-                    <p className="font-medium text-foreground">2a Highfield Avenue, London, England, NW11 9ET</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
