@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/select';
 import { Mail, Clock, Send, CheckCircle, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 const services = [
   'Electrical Work',
@@ -34,6 +35,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     service: '',
     message: '',
   });
@@ -42,22 +44,57 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      // Initialize EmailJS with your public key
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: 'Message Sent!',
-      description: "We'll get back to you within 24 hours.",
-    });
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      }
 
-    setFormData({
-      name: '',
-      email: '',
-      service: '',
-      message: '',
-    });
+      // Send email using EmailJS
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || 'Not provided',
+          service: formData.service,
+          message: formData.message,
+          to_email: 'grandhomeconstructionltd@gmail.com',
+        },
+        publicKey
+      );
+
+      setIsSubmitted(true);
+      toast({
+        title: 'Message Sent Successfully!',
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: 'Failed to Send Message',
+        description: error instanceof Error 
+          ? error.message 
+          : 'Please try again later or contact us directly via email.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -184,6 +221,22 @@ export default function Contact() {
                           }
                         />
                       </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Contact Number</Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="07123 456789 (Optional)"
+                        value={formData.phone}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
+                      />
+                      <p className="text-xs text-muted-foreground">
+                        Optional: Provide your phone number if you prefer to be contacted via call
+                      </p>
                     </div>
 
                     <div className="space-y-2">
