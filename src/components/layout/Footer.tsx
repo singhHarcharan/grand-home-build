@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail as MailIcon, Phone as PhoneIcon } from 'lucide-react';
+import { Mail as MailIcon, Instagram } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -33,11 +33,13 @@ export function Footer() {
                 grandhomeconstructionltd@gmail.com
               </a>
               <a
-                href="tel:+441onal"
+                href="https://www.instagram.com/ghconst.2024/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors"
               >
-                <PhoneIcon className="w-4 h-4 text-accent flex-shrink-0" />
-                Contact Us Today
+                <Instagram className="w-4 h-4 text-accent flex-shrink-0" />
+                @ghconst.2024
               </a>
               {/* <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
                 <MapPin className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />

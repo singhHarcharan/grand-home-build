@@ -11,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Mail, Clock, Send, CheckCircle } from 'lucide-react';
+import { Mail, Clock, Send, CheckCircle, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const services = [
@@ -34,7 +34,6 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
     service: '',
     message: '',
   });
@@ -56,7 +55,6 @@ export default function Contact() {
     setFormData({
       name: '',
       email: '',
-      phone: '',
       service: '',
       message: '',
     });
@@ -112,9 +110,23 @@ export default function Contact() {
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">Working Hours</h3>
                   <p className="text-muted-foreground text-sm">
-                    Mon - Fri: 8:00 AM - 6:00 PM<br />
-                    Sat: 9:00 AM - 2:00 PM
+                    Mon - Sat: 8:00 AM - 5:00 PM
                   </p>
+                </div>
+
+                <div className="flex flex-col items-center p-6 bg-secondary rounded-xl">
+                  <div className="w-14 h-14 bg-accent/10 rounded-full flex items-center justify-center mb-4">
+                    <Instagram className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Follow Us</h3>
+                  <a
+                    href="https://www.instagram.com/ghconst.2024/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground text-sm hover:text-accent transition-colors"
+                  >
+                    @ghconst.2024
+                  </a>
                 </div>
               </div>
             </div>
@@ -174,39 +186,25 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <Label htmlFor="phone">Phone Number</Label>
-                        <Input
-                          id="phone"
-                          type="tel"
-                          placeholder="07123 456789"
-                          value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                          }
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <Label htmlFor="service">Service Required *</Label>
-                        <Select
-                          value={formData.service}
-                          onValueChange={(value) =>
-                            setFormData({ ...formData, service: value })
-                          }
-                        >
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a service" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            {services.map((service) => (
-                              <SelectItem key={service} value={service}>
-                                {service}
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
-                      </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="service">Service Required *</Label>
+                      <Select
+                        value={formData.service}
+                        onValueChange={(value) =>
+                          setFormData({ ...formData, service: value })
+                        }
+                      >
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select a service" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {services.map((service) => (
+                            <SelectItem key={service} value={service}>
+                              {service}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
 
                     <div className="space-y-2">

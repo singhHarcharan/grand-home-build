@@ -4,7 +4,6 @@ import { ArrowRight, Award, Clock, Users } from 'lucide-react';
 import heroImage from '@/assets/hero-construction.jpg';
 
 const stats = [
-  { icon: Award, value: '10+', label: 'Years Experience' },
   { icon: Users, value: '500+', label: 'Happy Clients' },
   { icon: Clock, value: '100%', label: 'On-Time Delivery' },
 ];
